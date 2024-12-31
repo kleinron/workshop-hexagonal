@@ -1,4 +1,7 @@
 import { Config } from "./config.interface";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const configuration: Config = {
   baseUrl: process.env.BASE_URL || "http://localhost:3000",
@@ -21,6 +24,6 @@ const configuration: Config = {
   port: Number.parseInt(process.env.DB_PORT || "3306"),
   password: process.env.DB_PASSWORD || "root",
   database: process.env.DB_NAME || "user_service",
-} 
+}
 
 export default () => configuration;
